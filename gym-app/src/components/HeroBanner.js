@@ -24,7 +24,7 @@ const HeroBanner = () => {
       >Explore Exercises
       </Button>
       <Typography fontWeight={600}
-        color="blue"
+        color="#3792cb"
         sx={{
           opacity: '0.1',
           display: { lg: 'block', xs: 'none' },
