@@ -4,9 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 import { Box } from '@mui/material';
 import Home from './pages/Home'
 import ExerciseDetail from './pages/ExerciseDetail';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import Navbar from './components/Navbar';
+import AboutMe from './pages/AboutMe';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/excersise/:id" element={<ExerciseDetail />} />
+        <Route path="/" element={<AboutMe />} />
       </Routes>
       <Footer />
     </Box>
