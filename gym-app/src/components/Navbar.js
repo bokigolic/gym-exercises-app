@@ -12,13 +12,14 @@ const Navbar = () => {
       </Link>
       <Stack
         direction="row"
-        gap="40px"
+        gap="25px"
         fontFamily="Alegreya"
-        fontSize="24px"
+        fontSize="20px"
         alignItems="flex-end"
       >
         <Link to="/" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid blue' }}>Home</Link>
         <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212' }}>Exercises</a>
+        <a href="#about" style={{ textDecoration: 'none', color: '#3A1212' }}>About</a>
       </Stack>
     </Stack>
 
