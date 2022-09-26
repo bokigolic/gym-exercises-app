@@ -3,7 +3,7 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 
-const SearchExercises = ({searchExercises, bodyPart, setBodyPart}) => {
+const SearchExercises = ({ searchExercises, bodyPart, setBodyPart }) => {
 
   const [search, setSearch] = useState('');
   const [exercises, setExercises] = useState([]);
@@ -23,6 +23,8 @@ const SearchExercises = ({searchExercises, bodyPart, setBodyPart}) => {
     if (search) {
       const excersisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 
+      console.log(excersisesData)
+
       const searchExercises = excersisesData.filter((exercise) => exercise.name.toLowerCase().includes(search)
         || exercise.target.toLowerCase().includes(search)
         || exercise.equipment.toLowerCase().includes(search)
@@ -37,16 +39,15 @@ const SearchExercises = ({searchExercises, bodyPart, setBodyPart}) => {
 
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
-      <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="49px" textAlign="center">
+      <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="50px" textAlign="center">
         Awesome Exercises You <br /> Should Know
       </Typography>
       <Box position="relative" mb="72px">
         <TextField
-          height="76px"
+          height="70px"
           sx={{
             input: {
-              fontWeight:
-                '700',
+              fontWeight: '700',
               border: 'none',
               borderRadius: '4px'
             },
@@ -64,11 +65,11 @@ const SearchExercises = ({searchExercises, bodyPart, setBodyPart}) => {
         />
         <Button className="search-btn"
           sx={{
-            bgcolor: '#FF2625',
+            bgcolor: '#3792cb',
             color: '#fff',
             textTransform: 'none',
             width: {
-              lg: '173px',
+              lg: '175px',
               xs: '80px'
             },
             height: '56px',
