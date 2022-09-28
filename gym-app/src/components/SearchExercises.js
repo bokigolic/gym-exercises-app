@@ -23,7 +23,7 @@ const SearchExercises = ({ searchExercises, bodyPart, setBodyPart }) => {
     if (search) {
       const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 
-  
+
 
       const searchedExercises = exercisesData.filter(
         (exercise) => exercise.name.toLowerCase().includes(search)
@@ -88,7 +88,7 @@ const SearchExercises = ({ searchExercises, bodyPart, setBodyPart }) => {
         width: '100%',
         p: '20px'
       }}>
-        <HorizontalScrollbar data={bodyParts}  />
+        <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} />
       </Box>
     </Stack>
   );
