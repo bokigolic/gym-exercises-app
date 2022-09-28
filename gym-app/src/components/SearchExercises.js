@@ -21,18 +21,20 @@ const SearchExercises = ({ searchExercises, bodyPart, setBodyPart }) => {
 
   const handleSearch = async () => {
     if (search) {
-      const excersisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
+      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 
-      console.log(excersisesData)
+  
 
-      const searchExercises = excersisesData.filter((exercise) => exercise.name.toLowerCase().includes(search)
-        || exercise.target.toLowerCase().includes(search)
-        || exercise.equipment.toLowerCase().includes(search)
-        || exercise.bodyPart.toLowerCase().includes(search),
+      const searchedExercises = exercisesData.filter(
+        (exercise) => exercise.name.toLowerCase().includes(search)
+          || exercise.target.toLowerCase().includes(search)
+          || exercise.equipment.toLowerCase().includes(search)
+          || exercise.bodyPart.toLowerCase().includes(search),
       );
 
+
       setSearch('');
-      setExercises(SearchExercises);
+      setExercises(searchedExercises);
     }
   }
 
@@ -86,7 +88,7 @@ const SearchExercises = ({ searchExercises, bodyPart, setBodyPart }) => {
         width: '100%',
         p: '20px'
       }}>
-        <HorizontalScrollbar data={bodyParts} bodyParts setBodyPart={setBodyPart} bodyPart={bodyPart} />
+        <HorizontalScrollbar data={bodyParts}  />
       </Box>
     </Stack>
   );
