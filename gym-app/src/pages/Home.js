@@ -5,19 +5,20 @@ import SearchExercises from '../components/SearchExercises';
 import Exercises from '../components/Exercises';
 
 const Home = () => {
-  const [exercises, setExercises] = useState([]);
   const [bodyPart, setBodyPart] = useState('all');
+  const [exercises, setExercises] = useState([]);
   return (
     <Box>
       <HeroBanner />
       <SearchExercises
         setExercises={setExercises}
         bodyPart={bodyPart}
-        etBodyPart={setBodyPart} />
+        setBodyPart={setBodyPart}
+      />
       <Exercises
         setExercises={setExercises}
         bodyPart={bodyPart}
-        etBodyPart={setBodyPart}
+        setBodyPart={setBodyPart}
       />
     </Box>
   )
