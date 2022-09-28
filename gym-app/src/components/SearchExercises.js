@@ -30,7 +30,7 @@ const SearchExercises = ({ searchExercises, bodyPart, setBodyPart }) => {
         || exercise.equipment.toLowerCase().includes(search)
         || exercise.bodyPart.toLowerCase().includes(search),
       );
-      
+
       setSearch('');
       setExercises(SearchExercises);
     }
@@ -76,7 +76,8 @@ const SearchExercises = ({ searchExercises, bodyPart, setBodyPart }) => {
             position: 'absolute',
             right: '0px',
             fontSize: { lg: '20px', xs: '14px' }
-          }} onClick={handleSearch}>
+          }}
+          onClick={handleSearch}>
           Search
         </Button>
       </Box>
