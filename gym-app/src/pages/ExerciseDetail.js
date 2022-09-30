@@ -3,11 +3,9 @@ import { useParams } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 import { exerciseOptions, fetchData, youtubeOptions } from '../utils/fetchData';
-
-
-import SimilarExercises from '../components/SimilarExercises';
-import ExercisesVideos from '../components/ExercisesVideos';
 import Detail from '../components/Detail';
+import ExerciseVideos from '../components/ExerciseVideos';
+import SimilarExercises from '../components/SimilarExercises';
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
@@ -26,10 +24,14 @@ const ExerciseDetail = () => {
       const exerciseDetailData = await fetchData(`${exerciseDbUrl}/exercises/exercise/${id}`, exerciseOptions);
       setExerciseDetail(exerciseDetailData);
 
-
       const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=${exerciseDetailData.name} exercise`, youtubeOptions);
       setExerciseVideos(exerciseVideosData.contents);
 
+      const targetMuscleExercisesData = await fetchData(`${exerciseDbUrl}/exercises/target/${exerciseDetailData.target}`, exerciseOptions);
+      setTargetMuscleExercises(targetMuscleExercisesData);
+
+      const equimentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exerciseOptions);
+      setEquipmentExercises(equimentExercisesData);
     };
 
     fetchExercisesData();
@@ -40,7 +42,7 @@ const ExerciseDetail = () => {
   return (
     <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
       <Detail exerciseDetail={exerciseDetail} />
-      <ExercisesVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
+      <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
     </Box>
   );
