@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Typography, Stack, Button } from '@mui/material';
 
@@ -12,18 +11,17 @@ const Detail = ({ exerciseDetail }) => {
   const extraDetail = [
     {
       icon: BodyPartImage,
-      name: bodyPart
+      name: bodyPart,
     },
     {
       icon: TargetImage,
-      name: target
+      name: target,
     },
     {
       icon: EquipmentImage,
       name: equipment,
-    }
-  ]
-
+    },
+  ];
 
   return (
     <Stack gap="60px" sx={{ flexDirection: { lg: 'row' }, p: '20px', alignItems: 'center' }}>
