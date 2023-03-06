@@ -24,6 +24,8 @@ const HeroBanner = () => {
 
       <Typography
         fontWeight={700}
+        color='#3792cb'
+
         sx={{
           fontSize: {
             lg: '44px',
@@ -32,6 +34,7 @@ const HeroBanner = () => {
         }}
         mb="23px"
         mt="30px">
+          
         Keep challenging
         <br />
         yourself
@@ -53,11 +56,12 @@ const HeroBanner = () => {
 
       <Typography
         fontWeight={600}
-        color="#3792cb"
+        color='#3792cb'
         sx={{
           opacity: '0.1',
           display: { lg: 'block', xs: 'none' },
-          fontSize: '180px'
+          fontSize: '108px',
+          padding: "30px"
         }}>
         Exercise
       </Typography>
